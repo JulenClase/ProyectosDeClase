@@ -2,13 +2,13 @@
 <%@page import="com.ipartek.formacion.pojo.Curso"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html ">
 <html>
 <head>
 <meta charset = "UTF-8">
 <title>Curso</title>
 	<%
-	Curso curso = (Curso) request.getAttribute(Constantes.ATT_CURSO);
+		Curso curso = (Curso) request.getAttribute(Constantes.ATT_CURSO);
 		int op = -1;
 		if(curso!=null)
 		{
@@ -19,14 +19,14 @@
 		}
 		else
 		{
-	%>
-	<title>Curso  - Curso nuevo</title>
-	<%
-		curso = new Curso();
-		op = Constantes.OP_CREATE;
+			%>
+				<title>Curso  - Curso nuevo</title>
+			<%
+				curso = new Curso();
+				op = Constantes.OP_CREATE;
 		//out.write("<p>Curso ID:" + curso.getCodigo() + "</p> <p> Curso Nombre: " + curso.getNombre() + "</p>");
 		}
-	%>
+		%>
 	</head>
 <body>
 
@@ -40,11 +40,11 @@
 		<%=Constantes.SERVLET_CURSOS%>
 			<form name="" id="" method='post' 
 				action="<%=Constantes.SERVLET_CURSOS%>">
-				<input type="hidden" 
+				<input type="text" 
 					id="<%=Constantes.PAR_OPERACION %>"
 					name="<%=Constantes.PAR_OPERACION %>"  
 					value="<%=op %>"/>
-				<input type="hidden" 
+				<input type="text" 
 					id="<%=Constantes.PAR_CODIGO %>" 
 					name="<%=Constantes.PAR_CODIGO %>" 
 					value="<%=curso.getCodigo()%>"/>
