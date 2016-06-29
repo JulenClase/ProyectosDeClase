@@ -1,21 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html >
-<html>
-<head>
-<meta charset = "UTF-8">
-<title>P√°gina de inicio</title>
-</head>
-<body>
+<!-- Si no es necesario compilar utilizar la version del footer -->
 
+<%@ include file="includes/header.jsp"%>
+	<jsp:include page="includes/error.jsp"/>
 <!-- Comentarios -->
 
-Bienvenidos a la p√°gina de gesti√≥n de alumnos de Ipartek
+Bienvenidos a la p·gina de gestiÛn de alumnos de Ipartek
 
 <p> <a href="cursos.do"> Ver todos los cursos. </a> </p>
 
 <p> <a href="alumnos.do"> Ver todos los Alumnos. </a> </p>
 
 
-</body>
-</html>
+<%@ include file="includes/footer.jsp"%>
