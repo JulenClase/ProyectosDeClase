@@ -83,11 +83,12 @@ public class AlumnoServlet extends HttpServlet {
 			// TODO: handle exception
 		} catch (CandidatoException e){
 		
+			
 		} catch (Exception e){
 			getAll(request);
-			rd.forward(request, response);
+			
 		}
-
+		rd.forward(request, response);
 	}
 	
 	private void recogerDatosAlumno(HttpServletRequest request) throws CandidatoException {

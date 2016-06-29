@@ -68,15 +68,15 @@ public class CursoServlet extends HttpServlet {
 		try{
 			
 			operacion = Integer.parseInt(op);
-		
+			recogerId(request);
 			switch(operacion){
 				case Constantes.OP_CREATE:
 					recogerDatos(request);
 					cService.create(curso);
 					break;
 				case Constantes.OP_DELETE:
-					recogerId(request);
-					cService.delete(curso.getCodigo());
+					
+					cService.delete(id);
 					break;
 				case Constantes.OP_UPDATE:
 					recogerDatos(request);

@@ -24,12 +24,16 @@
 		{
 			formulario =  "<form action= '" + Constantes.SERVLET_CURSOS + "' method = 'post'>";
 			//variable operacion
-			formulario +="<input type='hidden' "+ "name='" + Constantes.PAR_OPERACION + "' value = '" + Constantes.OP_DELETE + "/>";
+			formulario +="<input type='text' "+ "name='" + Constantes.PAR_OPERACION + "' value = '" + Constantes.OP_DELETE + "'/>";
 			//variable del codigo
-			
+			//la variable del codigo del curso
+			formulario +="<input type='text' "+ "name='"+Constantes.PAR_CODIGO+ "' value='"+curso.getCodigo()+"'/>";
+			//el boton de borrar
+			formulario +="<input type='submit' value='Borrar'";
+			formulario +="</form>";
 			
 					
-			out.write("<p>Curso: <a href='cursos.do?"+Constantes.PAR_CODIGO+"=" + curso.getCodigo() + "'> " + curso.getNombre() + "</a></p>");
+			out.write("<div>Curso: <a href='cursos.do?"+Constantes.PAR_CODIGO+"=" + curso.getCodigo() + "'> " + curso.getNombre() + "</a>  "+formulario+"</div>");
 		}
 	}
 
