@@ -1,3 +1,4 @@
+<%@page import="com.ipartek.formacion.controller.exception.AlumnoError"%>
 <%@page import="com.ipartek.formacion.pojo.Alumno"%>
 <%@page import="com.ipartek.formacion.controller.Constantes"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -34,7 +35,13 @@
 	<div>
 	<a href="<%=Constantes.SERVLET_ALUMNOS %>">Atras</a>
 
-		
+		<%
+			if(alumno instanceof AlumnoError)
+			{
+				AlumnoError aux = (AlumnoError) alumno;
+				out.write(aux.getMensaje());
+			}
+		%>
 		<%
 		if(alumno!=null){
 		%>

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ipartek.formacion.controller.exception.AlumnoError;
 import com.ipartek.formacion.pojo.Alumno;
 import com.ipartek.formacion.pojo.Curso;
 import com.ipartek.formacion.pojo.exception.CandidatoException;
@@ -83,6 +84,17 @@ public class AlumnoServlet extends HttpServlet {
 			// TODO: handle exception
 		} catch (CandidatoException e){
 		
+			AlumnoError aError;
+			try {
+				aError = new AlumnoError();
+				aError = recogerDatosError(request);
+				aError.setMensaje(e.getMessage());
+				request.setAttribute(Constantes.ATT_ALUMNO, aError);
+				rd=request.getRequestDispatcher(Constantes.JSP_ALUMNO);
+			} catch (CandidatoException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			
 		} catch (Exception e){
 			getAll(request);
@@ -90,6 +102,18 @@ public class AlumnoServlet extends HttpServlet {
 		}
 		rd.forward(request, response);
 	}
+	
+	private AlumnoError recogerDatosError(HttpServletRequest request) throws CandidatoException {
+		// TODO Auto-generated method stub
+		AlumnoError aError = new AlumnoError();
+		aError.setNombre(request.getParameter(Constantes.PAR_NOMBRE));
+		aError.setApellidos(request.getParameter(Constantes.PAR_APELLIDOS));
+		aError.setDni(request.getParameter(Constantes.PAR_DNI));
+		aError.setCodigo(id);
+		return aError;
+	}
+
+	
 	
 	private void recogerDatosAlumno(HttpServletRequest request) throws CandidatoException {
 		// TODO Auto-generated method stub
