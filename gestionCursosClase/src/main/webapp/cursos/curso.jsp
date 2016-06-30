@@ -22,8 +22,9 @@
 			%>
 				<title>Curso  - Curso nuevo</title>
 			<%
-				curso = new Curso();
 				op = Constantes.OP_CREATE;
+				curso = new Curso();
+				
 		//out.write("<p>Curso ID:" + curso.getCodigo() + "</p> <p> Curso Nombre: " + curso.getNombre() + "</p>");
 		}
 		%>

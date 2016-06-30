@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import java.util.List;
 
+import com.ipartek.formacion.pojo.Curso;
 import com.ipartek.formacion.pojo.Modulo;
 import com.ipartek.formacion.service.exceptions.ModuloServiceException;
 
@@ -30,6 +31,7 @@ public class ModuloServiceImp implements ModuloService{
 		i++;
 		return modulo;
 	}
+	
 
 	@Override
 	public Modulo getById(int codigo) {

@@ -12,6 +12,7 @@
 <body>
 
 <a href="index.jsp"> Página principal</a>
+<a href="<%=Constantes.SERVLET_ALUMNOS+"?"+Constantes.PAR_CODIGO+"="+Alumno.CODIGO_ALUMNO%>"> Añadir Alumno Nuevo</a>
 
 <!-- SCIPTLET para poder poner codigo java se usa <% %>-->
 

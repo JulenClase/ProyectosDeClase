@@ -24,13 +24,7 @@ public class CursoServlet extends HttpServlet {
 	private int id = -1;
 	private int operacion = -1;
        
-    /**
-     * @see HttpServlet#HttpServlet() no se suele llamar al constructor
-     */
-    public CursoServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -39,7 +33,15 @@ public class CursoServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		try {		
 			recogerId(request);
-			getById(request);
+			if(id<0)
+			{
+				rwd = request.getRequestDispatcher(Constantes.JSP_CURSO);
+			}
+			else
+			{
+				getById(request);
+			}
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			getAll(request);
@@ -75,7 +77,7 @@ public class CursoServlet extends HttpServlet {
 					cService.create(curso);
 					break;
 				case Constantes.OP_DELETE:
-					
+System.out.println(id);					
 					cService.delete(id);
 					break;
 				case Constantes.OP_UPDATE:

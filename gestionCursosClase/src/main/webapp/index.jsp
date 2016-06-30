@@ -10,6 +10,8 @@ Bienvenidos a la página de gestión de alumnos de Ipartek
 
 <p> <a href="alumnos.do"> Ver todos los Alumnos. </a> </p>
 
+<p> <a href="modulos.do"> Ver todos los Modulos. </a> </p>
+
 
 
 <%@ include file="includes/footer.jsp"%>

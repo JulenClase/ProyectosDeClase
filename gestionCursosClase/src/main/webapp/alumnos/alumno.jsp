@@ -24,9 +24,9 @@
 		{
 %>
 		<title>Alumno  - Alumno nuevo</title>
-<%
+<%		op = Constantes.OP_CREATE;
 		alumno = new Alumno();
-		op = Constantes.OP_CREATE;
+		
 		}
 %>
 		

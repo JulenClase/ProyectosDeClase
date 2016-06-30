@@ -1,3 +1,4 @@
+<%@page import="com.ipartek.formacion.pojo.Alumno"%>
 <%@page import="com.ipartek.formacion.controller.Constantes"%>
 <%@page import="com.ipartek.formacion.pojo.Curso"%>
 <%@page import="java.util.List"%>
@@ -12,8 +13,7 @@
 <body>
 
 <a href="index.jsp"> Página principal</a>
-<a href="cursos/curso.jsp">Añadir Curso Nuevo</a> 
-
+<a href="<%=Constantes.SERVLET_CURSOS+"?"+Constantes.PAR_CODIGO+"="+Curso.CODIGO_CURSO%>">Añadir Curso Nuevo</a> 
 <!-- SCIPTLET para poder poner codigo java se usa <% %>-->
 
 <%
@@ -29,7 +29,7 @@
 			//variable del codigo
 			formulario +="<input type='hidden' "+ "name='"+Constantes.PAR_CODIGO+ "' value='"+curso.getCodigo()+"'/>";
 			//el boton de borrar
-			formulario +="<input type='submit' value='Borrar'";
+			formulario +="<input type='submit' value='Borrar'/>";
 			formulario +="</form>";
 			
 					
