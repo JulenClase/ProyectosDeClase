@@ -4,12 +4,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html >
-<html>
-<head>
-<meta charset = "UTF-8">
-<title>Listado de cursos</title>
-</head>
+<jsp:include page="../includes/header.jsp"/>
 <body>
 
 <a href="index.jsp"> Página principal</a>
@@ -32,11 +27,11 @@
 			formulario +="<input type='submit' value='Borrar'/>";
 			formulario +="</form>";
 			
-					
-			out.write("<div>Curso: <a href='cursos.do?"+Constantes.PAR_CODIGO+"=" + curso.getCodigo() + "'> " + curso.getNombre() + "</a>  "+formulario+"</div>");
+				
+			out.write("<div>Curso: <a href='"+Constantes.SERVLET_CURSOS+"?"+Constantes.PAR_CODIGO+"=" + curso.getCodigo() + "'> " + curso.getNombre() + "</a>  "+formulario+"</div>");
+			
 		}
 	}
 
 %>
-</body>
-</html>
+<%@ include file="../includes/footer.jsp"%>

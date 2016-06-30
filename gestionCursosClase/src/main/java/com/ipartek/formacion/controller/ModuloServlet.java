@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ipartek.formacion.pojo.Alumno;
 import com.ipartek.formacion.pojo.Modulo;
 import com.ipartek.formacion.pojo.exception.CandidatoException;
 import com.ipartek.formacion.service.ModuloService;

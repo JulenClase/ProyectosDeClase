@@ -3,13 +3,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset=UTF-8">
-<title>Listado de alumnos</title>
-</head>
-<body>
+<jsp:include page="../includes/header.jsp"/>
 
 <a href="index.jsp"> Página principal</a>
 <a href="<%=Constantes.SERVLET_ALUMNOS+"?"+Constantes.PAR_CODIGO+"="+Alumno.CODIGO_ALUMNO%>"> Añadir Alumno Nuevo</a>
@@ -28,5 +22,4 @@
 
 %>
 
-</body>
-</html>
+<%@ include file="../includes/footer.jsp"%>

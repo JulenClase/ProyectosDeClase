@@ -2,11 +2,7 @@
 <%@page import="com.ipartek.formacion.pojo.Curso"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html ">
-<html>
-<head>
-<meta charset = "UTF-8">
-<title>Curso</title>
+<jsp:include page="../includes/header.jsp"/>
 	<%
 		Curso curso = (Curso) request.getAttribute(Constantes.ATT_CURSO);
 		int op = -1;
@@ -28,7 +24,7 @@
 		//out.write("<p>Curso ID:" + curso.getCodigo() + "</p> <p> Curso Nombre: " + curso.getNombre() + "</p>");
 		}
 		%>
-	</head>
+	
 <body>
 
 	<div id="wrapper">
@@ -62,5 +58,4 @@
 		%>
 		</div>
 
-</body>
-</html>
+<%@ include file="../includes/footer.jsp"%>

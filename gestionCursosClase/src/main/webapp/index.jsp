@@ -1,17 +1,10 @@
 <!-- Si no es necesario compilar utilizar la version del footer -->
-
-<%@ include file="includes/header.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<jsp:include page="includes/header.jsp"/>
 	<jsp:include page="includes/error.jsp"/>
 <!-- Comentarios -->
 
-Bienvenidos a la p·gina de gestiÛn de alumnos de Ipartek
-
-<p> <a href="cursos.do"> Ver todos los cursos. </a> </p>
-
-<p> <a href="alumnos.do"> Ver todos los Alumnos. </a> </p>
-
-<p> <a href="modulos.do"> Ver todos los Modulos. </a> </p>
-
-
+<h2>Bienvenidos a la p√°gina de gesti√≥n de alumnos de Ipartek</h2>
 
 <%@ include file="includes/footer.jsp"%>

@@ -1,5 +1,7 @@
 <%@page import="com.ipartek.formacion.controller.Constantes"%>
 <%@page import="com.ipartek.formacion.pojo.Modulo"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ include file="../includes/header.jsp"%>
 
 <%
@@ -19,7 +21,7 @@
 				modulo = new Modulo();	
 		}
 		%>
-	</head>
+	
 <body>
 
 	<div id="wrapper">
