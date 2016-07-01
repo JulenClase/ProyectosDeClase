@@ -14,11 +14,14 @@ public class Constantes {
 	public final static String ATT_MODULO = "modulos";
 		
 	public final static String PAR_CODIGO= "codigo";
-	public final static String PAR_NOMBRE ="nombre";
+	public final static String PAR_NOMBRE = "nombre";
 	public final static String PAR_APELLIDOS = "apellidos";
 	public final static String PAR_DNI = "dni";
-	public final static String PAR_OPERACION ="operacion";
-	
+	public final static String PAR_OPERACION = "operacion";
+	public final static String PAR_MES = "mes";
+	public final static String PAR_DIA = "dia";
+	public final static String PAR_YEAR = "year";
+	public final static String PAR_FECHA= "fecha";	
 	public final static String SERVLET_CURSOS ="cursos.do";
 	public final static String SERVLET_ALUMNOS ="alumnos.do";
 	public final static String SERVLET_MODULOS ="modulos.do";

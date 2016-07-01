@@ -24,38 +24,34 @@
 		//out.write("<p>Curso ID:" + curso.getCodigo() + "</p> <p> Curso Nombre: " + curso.getNombre() + "</p>");
 		}
 		%>
-	
-<body>
-
-	<div id="wrapper">
-		<a href="<%=Constantes.SERVLET_CURSOS %>">Atras</a>
-
-		
+	<main>
+		<a class = "btn btn-warning" href="<%=Constantes.SERVLET_CURSOS %>">Atras</a>
 		<%
 		if(curso!=null){
 		%>
 		<%=Constantes.SERVLET_CURSOS%>
-			<form name="" id="" method='post' 
+			<form class="form-inline" name="formcurso" id="formcurso" method='post' 
 				action="<%=Constantes.SERVLET_CURSOS%>">
-				<input type="text" 
+				<input type="hidden" 
 					id="<%=Constantes.PAR_OPERACION %>"
 					name="<%=Constantes.PAR_OPERACION %>"  
 					value="<%=op %>"/>
-				<input type="text" 
+				<input type="hidden" 
 					id="<%=Constantes.PAR_CODIGO %>" 
 					name="<%=Constantes.PAR_CODIGO %>" 
 					value="<%=curso.getCodigo()%>"/>
-				<label for="<%=Constantes.PAR_NOMBRE%>"></label>
-				<input type="text" 
+				<div class="form-group">
+				<label class="sr-only" for="<%=Constantes.PAR_NOMBRE%>"></label>
+				<input class="form-control" type="text" 
 					name="<%=Constantes.PAR_NOMBRE%>" 
 					id="<%=Constantes.PAR_NOMBRE%>" 
 					value="<%=curso.getNombre() %>"
 					/>
-			
-				<input type="submit" />
+				</div>
+				<input class = "btn btn-success" type="submit" />
 			</form>			
 	<%	}
 		%>
-		</div>
+		</main>
 
 <%@ include file="../includes/footer.jsp"%>

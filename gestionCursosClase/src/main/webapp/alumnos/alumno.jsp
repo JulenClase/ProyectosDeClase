@@ -6,7 +6,6 @@
 <jsp:include page="../includes/header.jsp"/>
 <title>Insert title here</title>
 <%
-	
 		Alumno alumno = (Alumno) request.getAttribute(Constantes.ATT_ALUMNO);
 		
 		int op = -1;
@@ -26,11 +25,8 @@
 		
 		}
 %>
-		
-
-
 	<div>
-	<a href="<%=Constantes.SERVLET_ALUMNOS %>">Atras</a>
+	<a class = "btn btn-warning"href="<%=Constantes.SERVLET_ALUMNOS %>">Atras</a>
 
 		<%
 			if(alumno instanceof AlumnoError)
@@ -43,7 +39,7 @@
 		if(alumno!=null){
 		%>
 		<%=Constantes.SERVLET_ALUMNOS%>
-			<form name="" id="" method='post' 
+			<form class="horizontal" name="formalumno" id="formalumno" method='post' 
 				action="<%=Constantes.SERVLET_ALUMNOS%>">
 				<input type="hidden" 
 					id="<%=Constantes.PAR_OPERACION %>"
@@ -53,23 +49,40 @@
 					id="<%=Constantes.PAR_CODIGO %>" 
 					name="<%=Constantes.PAR_CODIGO %>" 
 					value="<%=alumno.getCodigo()%>"/>
-				<label for="<%=Constantes.PAR_NOMBRE%>">Nombre:</label>
-				<input type="text" 
-					name="<%=Constantes.PAR_NOMBRE%>" 
-					id="<%=Constantes.PAR_NOMBRE%>" 
-					value="<%=alumno.getNombre() %>"/>
-				<label for="<%=Constantes.PAR_NOMBRE%>">Apellidos:</label>
-				<input type="text" 
-					name="<%=Constantes.PAR_APELLIDOS%>" 
-					id="<%=Constantes.PAR_APELLIDOS%>" 
-					value="<%=alumno.getApellidos() %>"/>
-				<label for="<%=Constantes.PAR_NOMBRE%>">Dni:</label>
-				<input type="text" 
-					name="<%=Constantes.PAR_DNI%>" 
-					id="<%=Constantes.PAR_DNI%>" 
-					value="<%=alumno.getDni() %>"/>
-			
-				<input type="submit" />
+				<div class="form-group">
+					<label class = "col-xs-2" for="<%=Constantes.PAR_NOMBRE%>">Nombre:</label>
+					<input class="form-control" type="text" 
+						name="<%=Constantes.PAR_NOMBRE%>" 
+						id="<%=Constantes.PAR_NOMBRE%>" 
+						value="<%=alumno.getNombre() %>"/>
+				</div>
+				<div class="form-group">
+					<label class = "col-xs-2" for="<%=Constantes.PAR_APELLIDOS%>">Apellidos:</label>
+					<input class="form-control" type="text" 
+						name="<%=Constantes.PAR_APELLIDOS%>" 
+						id="<%=Constantes.PAR_APELLIDOS%>" 
+						value="<%=alumno.getApellidos() %>"/>
+				</div>
+				<div class="form-group">
+					<label class = "col-xs-2" for="<%=Constantes.PAR_DNI%>">Dni:</label>
+					<input class="form-control" type="text" 
+						name="<%=Constantes.PAR_DNI%>" 
+						id="<%=Constantes.PAR_DNI%>" 
+						value="<%=alumno.getDni() %>"/>
+				</div>
+				<div class="form-group">
+				<label for="<%=Constantes.PAR_FECHA%>">Fecha:</label>
+					<%
+						
+						
+					%>
+					<input class="form-control" placeholder = "Dia" value = "2" min= "1" max = "12" step = "1" type="number" name="<%=Constantes.PAR_DIA%>" id="<%=Constantes.PAR_DIA%>"/>
+					<input class="form-control" placeholder = "Mes" min= "1" max = "12" step = "1" type="number" name="<%=Constantes.PAR_MES%>" id="<%=Constantes.PAR_MES%>"/>
+					<input class="form-control" placeholder = "Año" type="number" name="<%=Constantes.PAR_YEAR%>" id="<%=Constantes.PAR_YEAR%>"/>
+				</div>
+				<div class="form-group">
+				<button class = "btn btn-success" type="submit"> Guardar </button>
+				</div>
 			</form>			
 	<%	}
 		%>
